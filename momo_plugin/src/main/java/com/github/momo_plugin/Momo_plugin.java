@@ -39,11 +39,16 @@ public final class Momo_plugin extends JavaPlugin implements Listener, CommandEx
         if(command.equals("go")) {
             if(args.length == 0) {
                 player.sendMessage(ChatColor.RED + "type like this: /go <player>");
+            } else if(args.length == 1) {
+                Player target = Bukkit.getPlayer(args[0]);
+                player.teleport(target.getLocation());
             }
-        } else if(args.length == 1) {
-            Player target = Bukkit.getPlayer(args[0]);
-            player.teleport(target.getLocation());
         }
         return false;
+    }
+    
+    @Override
+    public void whenPlayerDie(PlayerDeathEvent event) {
+        Player player = event.getPlayer();
     }
 }
