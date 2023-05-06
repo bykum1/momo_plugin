@@ -1,0 +1,12 @@
+name: momo_plugin
+version: 1.0.0
+main: com.github.momo_
+description: momo's plugin
+author: momo_kh
+website: https://github.com/bykum1
+api-version: 1.19
+command:
+  go:
+    description: "This is the same as command tp"
+    usage: "/go <player>"
+    aliases : [command]
